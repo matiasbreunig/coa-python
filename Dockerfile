@@ -13,6 +13,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copie o código do aplicativo para o diretório de trabalho
 COPY main.py .
 COPY dictionary .
+COPY dictionary.huawei .
+COPY dictionary.freeradius .
 
 # Defina as variáveis de ambiente
 ENV NAS_SERVER="186.194.172.2"
