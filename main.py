@@ -10,10 +10,7 @@ app = FastAPI()
 nas_server = os.environ.get("NAS_SERVER")
 nas_secret = os.environ.get("NAS_SECRET")
 nas_port = os.environ.get("NAS_PORT")
-
-
-# Fixed authentication token
-authentication_token = "b8e8251c-319d-4f87-b9f0-d53e2f2d5093"
+authentication_token = os.environ.get("TOKEN")
 
 @app.post("/coa/")
 def send_coa_request(
@@ -26,9 +23,6 @@ def send_coa_request(
 
     if "attributes" not in data or not isinstance(data["attributes"], dict):
         return {"error": "Missing or invalid 'attributes' field"}
-
-    if "nas_server" not in data or "nas_secret" not in data or "nas_port" not in data:
-        return {"error": "Missing required parameters"}
 
     # Extract parameters from data
     attributes = data["attributes"]

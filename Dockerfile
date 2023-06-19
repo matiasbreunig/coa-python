@@ -18,6 +18,7 @@ COPY dictionary .
 ENV NAS_SERVER="186.194.172.2"
 ENV NAS_SECRET="senha@uneinternet"
 ENV NAS_PORT="3799"
+ENV TOKEN="b8e8251c-319d-4f87-b9f0-d53e2f2d5093" 
 
 # Exponha a porta do servidor
 EXPOSE 8000
